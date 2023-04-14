@@ -36,12 +36,6 @@ RUN curl -o amazon-corretto-15.0.2.7.1-linux-x64.tar.gz https://corretto.aws/dow
     tar -xvzf amazon-corretto-15.0.2.7.1-linux-x64.tar.gz -C /tmp
 
 ENV PATH="${PATH}:/tmp/amazon-corretto-15.0.2.7.1-linux-x64/bin"
-ENV JAVA_HOME=/tmp/amazon-corretto-15.0.2.7.1-linux-x64
-
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
-    unzip awscliv2.zip && \
-    ./aws/install && \
-    rm awscliv2.zip
-    
+ENV JAVA_HOME=/tmp/amazon-corretto-15.0.2.7.1-linux-x64  
 
 ## USER jenkins
